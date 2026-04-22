@@ -1,3 +1,198 @@
-<!-- Contact page -->
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Contact | WYO Services</title><link rel="stylesheet" href="css/styles.css"></head><body><!-- Build this page --></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | WYO Services — Get a Quote for Your Oilfield Project</title>
+  <meta name="description" content="Contact WYO Services for oilfield site development and reclamation in Wyoming. Call (307) 696-5161 or request a quote online.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" data-devtools-partial="header">
+    <div class="site-header__inner">
+      <a href="/" class="site-header__brand">WYO Services</a>
+      <nav class="site-nav">
+        <a href="/">Home</a>
+        <div class="site-nav__item has-children">
+          <a href="/services.html">Services</a>
+          <ul class="site-nav__dropdown">
+            <li><a href="/services/pad-construction-and-dirt-work.html">Pad Construction & Dirt Work</a></li>
+            <li><a href="/services/reclamation-and-seeding.html">Reclamation & Seeding</a></li>
+            <li><a href="/services/fencing-and-containment.html">Fencing & Containment</a></li>
+            <li><a href="/services/cattle-guards-fabrication-and-installation.html">Cattle Guards</a></li>
+            <li><a href="/services/site-infrastructure-support.html">Site Infrastructure</a></li>
+            <li><a href="/services/turnkey-site-development-capabilities.html">Turnkey Development</a></li>
+            <li><a href="/services/emerging-pipeline-work.html">Pipeline Work</a></li>
+          </ul>
+        </div>
+        <a href="/about.html">About</a>
+        <a href="/service-areas.html">Service Areas</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <div class="site-header__cta">
+        <a href="tel:3076965161" class="site-header__phone">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+          (307) 696-5161
+        </a>
+        <a href="/contact.html" class="btn">Get a Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" data-block-id="contact:hero" style="padding: clamp(64px,10vh,120px) 0 clamp(48px,8vh,80px);">
+    <div class="hero__bg" style="background-image: url('https://source.unsplash.com/1600x900/?wyoming+landscape+mountains');"></div>
+    <div class="container">
+      <span class="eyebrow hero__eyebrow" data-content="hero-eyebrow">Contact Us</span>
+      <h1 data-content="hero-title">Let's Talk About Your Project</h1>
+      <p class="hero__subtitle" data-content="hero-subtitle">Whether you need a quote on a single service or want to discuss a full-scope project, WYO Services is ready to put equipment in the field.</p>
+    </div>
+  </section>
+
+  <!-- Contact Form + Info -->
+  <section class="page-section" data-block-id="contact:form">
+    <div class="container">
+      <div class="contact-grid">
+        <div>
+          <h2 style="margin-bottom:8px;" data-content="form-title">Request a Quote</h2>
+          <p style="margin-bottom:32px;" data-content="form-subtitle">Fill out the form below and our team will follow up to discuss your project scope, timeline, and requirements.</p>
+          <form class="contact-form" data-devtools-form data-form-type="contact">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
+              <div class="form-field">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first_name" required>
+              </div>
+              <div class="form-field">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last_name" required>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company">
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-field">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone">
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="service">Service Needed</label>
+              <select id="service" name="service">
+                <option value="">Select a service...</option>
+                <option value="pad-construction">Pad Construction & Dirt Work</option>
+                <option value="reclamation">Reclamation & Seeding</option>
+                <option value="fencing">Fencing & Containment</option>
+                <option value="cattle-guards">Cattle Guards</option>
+                <option value="infrastructure">Site Infrastructure Support</option>
+                <option value="turnkey">Turnkey Site Development</option>
+                <option value="pipeline">Pipeline Work</option>
+                <option value="multiple">Multiple Services</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="message">Project Details</label>
+              <textarea id="message" name="message" placeholder="Tell us about your project — location, scope, timeline, and any other details that will help us put together a proposal."></textarea>
+            </div>
+            <button type="submit" class="btn">Submit Request →</button>
+          </form>
+        </div>
+        <div>
+          <div class="contact-card">
+            <h3>Contact Information</h3>
+            <dl>
+              <div>
+                <dt>Phone</dt>
+                <dd><a href="tel:3076965161">(307) 696-5161</a></dd>
+              </div>
+              <div>
+                <dt>Email</dt>
+                <dd><a href="mailto:shai@kutthru.com">shai@kutthru.com</a></dd>
+              </div>
+              <div>
+                <dt>Office</dt>
+                <dd>410 Limestone Ave<br>Gillette, WY</dd>
+              </div>
+              <div>
+                <dt>Service Areas</dt>
+                <dd>Gillette & Douglas, Wyoming<br>Powder River Basin</dd>
+              </div>
+            </dl>
+          </div>
+          <iframe
+            class="contact-map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2823.5!2d-105.5022!3d44.2911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5333b2e7c9f7f7f7%3A0x0!2sGillette%2C+WY!5e0!3m2!1sen!2sus!4v1"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="WYO Services location in Gillette, Wyoming"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" data-block-id="contact:cta">
+    <div class="container">
+      <span class="eyebrow">Prefer a Call?</span>
+      <h2 data-content="cta-title">Talk Directly With Our Team</h2>
+      <p data-content="cta-text">Sometimes a phone call is faster than a form. Reach us at (307) 696-5161 to discuss your project directly.</p>
+      <a href="tel:3076965161" class="btn">Call (307) 696-5161 →</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer" data-devtools-partial="footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <div class="site-footer__brand">WYO Services</div>
+          <p>Multi-service oilfield site development and reclamation contractor serving the Powder River Basin since 2012.</p>
+          <p>410 Limestone Ave, Gillette, WY</p>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul class="site-footer__list">
+            <li><a href="/services/pad-construction-and-dirt-work.html">Pad Construction</a></li>
+            <li><a href="/services/reclamation-and-seeding.html">Reclamation & Seeding</a></li>
+            <li><a href="/services/fencing-and-containment.html">Fencing & Containment</a></li>
+            <li><a href="/services/cattle-guards-fabrication-and-installation.html">Cattle Guards</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>More Services</h4>
+          <ul class="site-footer__list">
+            <li><a href="/services/site-infrastructure-support.html">Site Infrastructure</a></li>
+            <li><a href="/services/turnkey-site-development-capabilities.html">Turnkey Development</a></li>
+            <li><a href="/services/emerging-pipeline-work.html">Pipeline Work</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="site-footer__list">
+            <li><a href="tel:3076965161">(307) 696-5161</a></li>
+            <li><a href="mailto:shai@kutthru.com">shai@kutthru.com</a></li>
+            <li><a href="/contact.html">Get a Quote</a></li>
+            <li><a href="/service-areas.html">Service Areas</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <span>&copy; 2026 WYO Services. All rights reserved.</span>
+        <span>Gillette & Douglas, Wyoming</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
