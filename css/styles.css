@@ -499,8 +499,7 @@ section.page-section.dark .eyebrow::before { background: var(--color-primary-lig
 
 /* FAQ */
 .faq {
-  max-width: 760px;
-  margin: 0 auto;
+  max-width: none;
 }
 .faq details {
   border: 1px solid var(--color-border);
