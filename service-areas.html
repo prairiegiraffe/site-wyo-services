@@ -16,6 +16,7 @@
   <header class="site-header" data-devtools-partial="header">
     <div class="site-header__inner">
       <a href="/" class="site-header__brand">WYO Services</a>
+            <button class="site-header__toggle" aria-label="Menu" aria-expanded="false" onclick="const n=this.closest('.site-header').querySelector('.site-nav');const o=n.classList.toggle('is-open');this.setAttribute('aria-expanded',o)"><svg class="icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg><svg class="icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button>
       <nav class="site-nav">
         <a href="/">Home</a>
         <div class="site-nav__item has-children">
