@@ -154,12 +154,48 @@ Available sections:
 
 ## Images
 
-Use placeholder images for now. The client will provide real project photos later.
-For placeholders, use Unsplash source URLs:
+### AI Image Generation (preferred)
+Generate images on demand using the platform API. Each call creates a photorealistic
+image via AI, saves it to R2, and returns a URL you can use directly in `<img src>`.
+
+```bash
+curl -X POST "https://devtools.prairiegiraffe.com/api/projects/proj_x2c0miif/sites/56/generate-image" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -d '{
+    "prompt": "Heavy equipment excavator on an oilfield pad construction site, Wyoming prairie, golden hour",
+    "filename": "hero-excavation",
+    "aspect": "landscape"
+  }'
+# Returns: { "success": true, "url": "/api/projects/.../serve/assets/hero-excavation-a1b2c3d4.webp", ... }
+```
+
+**Auth:** Use a Bearer API token (generate one from Settings → API Tokens in the dashboard).
+Or if running locally with a browser session, use `-H "Cookie: session=YOUR_SESSION"` instead.
+
+**Parameters:**
+- `prompt` (required) — Describe the image. Be specific about subject, setting, lighting.
+- `filename` (optional) — Stem for the filename. Default: "image". Use descriptive names like "hero-main", "about-team", "service-fencing".
+- `aspect` (optional) — "landscape" (1536x1024), "portrait" (1024x1536), or "square" (1024x1024). Default: "landscape".
+
+**Cost:** ~$0.05 per image. Generate only what you need.
+
+**The URL returned is a relative path** — use it directly as the `src` attribute:
+```html
+<img src="/api/projects/proj_x2c0miif/sites/56/serve/assets/hero-excavation-a1b2c3d4.webp"
+     alt="Excavation work in Wyoming" loading="eager" />
+```
+
+### Unsplash Fallback
+If you can't generate (no session cookie, API down), use Unsplash:
 ```
 https://source.unsplash.com/1600x900/?Oil%20and%20Gas%20Multi-service%20site%20development%20and%20reclamation,work
 https://source.unsplash.com/800x1000/?Oil%20and%20Gas%20Multi-service%20site%20development%20and%20reclamation,team
 ```
+
+### Client Uploads
+When the client provides real photos later, they'll be uploaded at:
+`https://devtools.prairiegiraffe.com/api/files/sites/proj_x2c0miif/1776895543929/assets/[filename]`
 
 ## Deployment
 
