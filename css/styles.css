@@ -820,7 +820,7 @@ section.page-section.dark .eyebrow::before { background: var(--color-primary-lig
 .site-footer p { color: #94a3b8; font-size: 0.9375rem; margin-bottom: 10px; }
 .site-footer__grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
   gap: 40px;
   padding-bottom: 48px;
 }
