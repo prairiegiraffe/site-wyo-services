@@ -1,12 +1,12 @@
 /* Industrial Contractor shell — generated */
 :root {
-  --color-primary: #1f4d2b;
-  --color-primary-dark: #102917;
-  --color-primary-light: #60bf78;
-  --color-primary-tint: rgba(31, 77, 43, 0.08);
-  --color-primary-tint-strong: rgba(31, 77, 43, 0.18);
-  --color-accent: #247561;
-  --color-dark: #0f172a;
+  --color-primary: #EA743D;
+  --color-primary-dark: #c9572a;
+  --color-primary-light: #f0935e;
+  --color-primary-tint: rgba(234, 116, 61, 0.08);
+  --color-primary-tint-strong: rgba(234, 116, 61, 0.18);
+  --color-accent: #d4642f;
+  --color-dark: #000000;
   --color-muted: #4b5563;
   --color-border: #e5e7eb;
   --color-surface: #f9fafb;
@@ -182,7 +182,7 @@ hr { border: 0; height: 1px; background: var(--color-border); margin: 3rem 0; }
   top: calc(100% + 4px);
   left: 0;
   min-width: 220px;
-  background: #1e293b;
+  background: #111111;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius);
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -241,7 +241,7 @@ hr { border: 0; height: 1px; background: var(--color-border); margin: 3rem 0; }
   padding: clamp(100px, 16vh, 200px) 0 clamp(80px, 12vh, 160px);
   overflow: hidden;
   color: #fff;
-  background: #0f172a;
+  background: #000000;
   isolation: isolate;
 }
 .hero__bg {
@@ -257,8 +257,8 @@ img.hero__bg {
 .hero::before {
   content: ''; position: absolute; inset: 0; z-index: -1;
   background:
-    linear-gradient(to right, rgba(15,23,42,0.85) 0%, rgba(15,23,42,0.4) 60%, rgba(15,23,42,0.15) 100%),
-    linear-gradient(to top, rgba(15,23,42,0.9) 0%, transparent 30%);
+    linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.15) 100%),
+    linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 30%);
   pointer-events: none;
 }
 .hero .container {
@@ -284,7 +284,7 @@ img.hero__bg {
 
 /* Stats strip — left-border pattern (Studio-inspired) */
 .stats {
-  background: #0f172a;
+  background: #000000;
   padding: 48px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
@@ -321,7 +321,7 @@ img.hero__bg {
 /* Sections */
 section.page-section { padding: clamp(64px, 9vh, 112px) 0; }
 section.page-section.alt { background: #f8fafc; }
-section.page-section.dark { background: #0f172a; color: rgba(255,255,255,0.85); }
+section.page-section.dark { background: #000000; color: rgba(255,255,255,0.85); }
 section.page-section.dark h2, section.page-section.dark h3 { color: #fff; }
 section.page-section.dark p { color: rgba(255, 255, 255, 0.6); }
 section.page-section.dark .eyebrow { color: var(--color-primary-light); }
@@ -735,7 +735,7 @@ section.page-section.dark .eyebrow::before { background: var(--color-primary-lig
   align-items: start;
 }
 .contact-card {
-  background: #0f172a;
+  background: #000000;
   border-radius: var(--radius);
   padding: 32px;
   color: rgba(255, 255, 255, 0.85);
@@ -787,7 +787,7 @@ section.page-section.dark .eyebrow::before { background: var(--color-primary-lig
 
 /* CTA section — industrial dark */
 .cta-section {
-  background: #0f172a;
+  background: #000000;
   color: #fff;
   padding: clamp(64px, 10vh, 112px) 0;
   text-align: center;
@@ -809,7 +809,7 @@ section.page-section.dark .eyebrow::before { background: var(--color-primary-lig
 .cta-section .eyebrow::before { background: var(--color-primary-light); }
 
 /* Footer — dark, industrial */
-.site-footer { background: #0f172a; color: #94a3b8; padding: 64px 0 28px; border-top: 1px solid rgba(255,255,255,0.06); }
+.site-footer { background: #000000; color: #94a3b8; padding: 64px 0 28px; border-top: 1px solid rgba(255,255,255,0.06); }
 .site-footer h4 {
   color: #fff;
   font-family: var(--font-heading);
