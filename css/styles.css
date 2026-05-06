@@ -1,4 +1,51 @@
 /* Industrial Contractor shell — generated */
+
+/* Tactic Sans Extended Black — headings */
+@font-face {
+  font-family: "Tactic Sans Ext";
+  src: url("../fonts/tactic-sans-extended-black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Open Sauce Sans — body */
+@font-face {
+  font-family: "Open Sauce Sans";
+  src: url("../fonts/OpenSauceSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Sauce Sans";
+  src: url("../fonts/OpenSauceSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Sauce Sans";
+  src: url("../fonts/OpenSauceSans-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Sauce Sans";
+  src: url("../fonts/OpenSauceSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Sauce Sans";
+  src: url("../fonts/OpenSauceSans-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --color-primary: #EA743D;
   --color-primary-dark: #c9572a;
@@ -12,8 +59,8 @@
   --color-surface: #f9fafb;
   --color-surface-alt: #f3f4f6;
   --color-on-primary: #ffffff;
-  --font-heading: "Barlow Condensed", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-body: "Barlow", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: "Tactic Sans Ext", "Barlow Condensed", system-ui, sans-serif;
+  --font-body: "Open Sauce Sans", "Barlow", system-ui, sans-serif;
   --container: 1280px;
   --container-narrow: 860px;
   --radius-sm: 4px;
