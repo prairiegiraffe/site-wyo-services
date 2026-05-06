@@ -1,7 +1,6 @@
 /* Industrial Contractor shell — generated */
 
-/* Tactic Sans Extended Black — headings
-   DISABLED: demo/trial font file shows watermark. Waiting on licensed version from Beau.
+/* Tactic Sans Extended Black — headings */
 @font-face {
   font-family: "Tactic Sans Ext";
   src: url("../fonts/tactic-sans-extended-black.woff2") format("woff2");
@@ -9,7 +8,6 @@
   font-style: normal;
   font-display: swap;
 }
-*/
 
 /* Open Sauce Sans — body */
 @font-face {
@@ -61,7 +59,7 @@
   --color-surface: #f9fafb;
   --color-surface-alt: #f3f4f6;
   --color-on-primary: #ffffff;
-  --font-heading: "Open Sauce Sans", system-ui, sans-serif; /* TODO: swap to "Tactic Sans Ext" once licensed font file is delivered */
+  --font-heading: "Tactic Sans Ext", "Open Sauce Sans", system-ui, sans-serif;
   --font-body: "Open Sauce Sans", "Barlow", system-ui, sans-serif;
   --container: 1280px;
   --container-narrow: 860px;
