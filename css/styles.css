@@ -310,7 +310,7 @@ img.hero__bg {
 }
 .hero .container {
   position: relative;
-  max-width: 860px;
+  max-width: var(--container);
 }
 .hero h1 { color: #fff; margin-bottom: 20px; line-height: 1.0; }
 .hero__subtitle {
