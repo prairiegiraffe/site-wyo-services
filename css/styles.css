@@ -897,8 +897,8 @@ section.page-section.dark .eyebrow::before { background: var(--color-primary-lig
   gap: 12px;
 }
 
-/* Mobile */
-@media (max-width: 820px) {
+/* Mobile / Tablet — nav collapses under logo */
+@media (max-width: 1080px) {
   .site-header__inner { flex-wrap: wrap; gap: 12px; }
   .site-header__toggle { display: block; }
   .site-header__cta { order: 2; }
@@ -945,6 +945,10 @@ section.page-section.dark .eyebrow::before { background: var(--color-primary-lig
   }
   .site-nav__dropdown a:hover { color: #fff; }
 
+}
+
+/* Tablet — stack content to single column */
+@media (max-width: 820px) {
   .hero .container { max-width: 100%; }
   .stats__inner { gap: 32px; }
   .stat { border-left: none; padding: 0; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 24px; }
