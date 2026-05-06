@@ -139,7 +139,7 @@ hr { border: 0; height: 1px; background: var(--color-border); margin: 3rem 0; }
   border-radius: var(--radius-sm);
   background: var(--color-primary);
   color: var(--color-on-primary);
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   font-weight: 700;
   font-size: 0.9375rem;
   letter-spacing: 0.04em;
