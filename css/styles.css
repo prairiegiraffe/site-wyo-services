@@ -652,6 +652,13 @@ section.page-section.dark .eyebrow::before { background: var(--color-primary-lig
   font-weight: 600;
 }
 
+/* Testimonial grid — two per row */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
 /* Testimonial — two-column with large photo */
 .testimonial {
   display: grid;
@@ -979,6 +986,7 @@ section.page-section.dark .eyebrow::before { background: var(--color-primary-lig
   .feature-row { grid-template-columns: 1fr; }
   .feature-row.reverse .feature-row__image { order: unset; }
   .feature-row.reverse .feature-row__body { order: unset; }
+  .testimonial-grid { grid-template-columns: 1fr; }
   .testimonial { grid-template-columns: 1fr; }
   .testimonial__image { max-height: 300px; }
   .contact-grid { grid-template-columns: 1fr; gap: 32px; }
