@@ -204,6 +204,149 @@ When the client provides real photos later, they'll be uploaded at:
 - Push to `main` branch → auto-deploys via Cloudflare Pages
 - No build step — CF Pages serves static files directly
 
+
+## Upload from URL (for stock photos, client-provided URLs)
+Download any image from a URL and store it in the site's R2 assets:
+```bash
+curl -X POST "https://devtools.prairiegiraffe.com/api/projects/proj_x2c0miif/sites/56/upload-image" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer dtk_1bb55aa9bad1f026b3609963754fb181c666ec1712c45c6584c474c64efea652" \
+  -d '{
+    "url": "https://images.unsplash.com/photo-xxxx?w=1600",
+    "filename": "hero-main"
+  }'
+# Returns: { "success": true, "data": { "url": "/api/projects/.../serve/assets/hero-main-a1b2c3d4.jpg" } }
+```
+Use this for stock photos, Unsplash images, or any image URL. The URL returned is a relative path — use it directly as `src`.
+
+### DO NOT put images in the repo
+All images must go through `generate-image` or `upload-image`. The repo is for code only. Images are served from R2 with CDN caching.
+
+## Forms
+
+When building contact forms, quote request forms, or any other form, register them with
+the platform so submissions are tracked and forwarded.
+
+### Step 1: Create the form in the platform
+```bash
+curl -X POST "https://devtools.prairiegiraffe.com/api/projects/proj_x2c0miif/forms" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer dtk_1bb55aa9bad1f026b3609963754fb181c666ec1712c45c6584c474c64efea652" \
+  -d '{
+    "name": "Contact Form",
+    "fields": [
+      { "label": "Name", "type": "text", "required": true, "placeholder": "Your name" },
+      { "label": "Email", "type": "email", "required": true, "placeholder": "you@company.com" },
+      { "label": "Phone", "type": "phone", "required": false, "placeholder": "(307) 555-5555" },
+      { "label": "Company", "type": "text", "required": false, "placeholder": "Company name" },
+      { "label": "Message", "type": "textarea", "required": true, "placeholder": "Tell us about your project" }
+    ],
+    "settings": {
+      "submit_button_text": "Send Message",
+      "success_message": "Thank you! We will be in touch shortly.",
+      "form_type": "contact"
+    }
+  }'
+# Returns: { "success": true, "data": { "id": 5, "slug": "contact-form" } }
+```
+
+**Field types:** `text`, `textarea`, `email`, `phone`, `number`, `date`, `file`, `select`, `checkbox`, `url`
+
+For `select` fields, include an `options` array: `["Option 1", "Option 2", "Option 3"]`
+
+### Step 2: Build the HTML form
+Use `data-devtools-form` and `data-form-type` attributes. The platform's form-embed script
+auto-wires submission handling (AJAX submit, file uploads, success message).
+
+```html
+<form data-devtools-form data-form-type="contact" method="post">
+  <input type="text" name="name" required placeholder="Your name" />
+  <input type="email" name="email" required placeholder="you@company.com" />
+  <input type="tel" name="phone" placeholder="(307) 555-5555" />
+  <input type="text" name="company" placeholder="Company name" />
+  <textarea name="message" required placeholder="Tell us about your project"></textarea>
+  <button type="submit">Send Message</button>
+</form>
+```
+
+**Important field name mapping:**
+- `name`, `email`, `phone`, `company`, `message` — these are top-level submission fields
+- Any other fields: use `name="custom_fields[field_name]"` (e.g. `custom_fields[service]`, `custom_fields[budget]`)
+
+## Link Hub (Linktree-style page)
+
+If the business needs a link-in-bio / Linktree-style page, create one via the bootstrap API.
+This creates a standalone page at `https://devtools.prairiegiraffe.com/links/proj_x2c0miif`.
+
+### Create a link hub (one call does everything)
+```bash
+curl -X POST "https://devtools.prairiegiraffe.com/api/projects/proj_x2c0miif/link-hub/bootstrap" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer dtk_1bb55aa9bad1f026b3609963754fb181c666ec1712c45c6584c474c64efea652" \
+  -d '{
+    "settings": {
+      "link_hub_title": "WYO Services",
+      "link_hub_description": "One Contractor. Complete Solutions.",
+      "link_hub_avatar_url": "https://logo-url-here",
+      "link_hub_theme": "dark",
+      "link_hub_background": "#1f4d2b",
+      "link_hub_button_style": "pill",
+      "link_hub_button_color": "#247561",
+      "link_hub_button_text_color": "#ffffff"
+    },
+    "items": [
+      { "label": "Request a Quote", "url": "https://site-wyo-services.pages.dev/contact.html", "is_featured": 1 },
+      { "label": "Our Services", "url": "https://site-wyo-services.pages.dev/services.html" },
+      { "label": "About Us", "url": "https://site-wyo-services.pages.dev/about.html" }
+    ],
+    "social_icons": [
+      { "platform": "phone", "url": "tel:3076965166" },
+      { "platform": "email", "url": "mailto:shai@kutthru.com" }
+    ],
+    "clear_existing": true
+  }'
+```
+
+### Link hub rules
+- **ALL item URLs must be absolute** (e.g. `https://site-wyo-services.pages.dev/about.html`). Never relative paths.
+- **Social icons go in `social_icons` array**, not as regular items. Platforms: facebook, instagram, linkedin, youtube, twitter, tiktok, pinterest, snapchat, github, website, email, phone
+- **One featured item max** (`is_featured: 1`) — the primary CTA button
+- **Always set a background** — use a brand color or gradient. Don't leave it blank.
+- **Set theme to match background**: `"dark"` for dark backgrounds, `"light"` for light
+- **Be selective** — only include links that matter for the business goal
+
+### Read an existing link hub (to copy or reference)
+```bash
+curl "https://devtools.prairiegiraffe.com/api/projects/SOURCE_PROJECT_KEY/link-hub/settings" \
+  -H "Authorization: Bearer dtk_1bb55aa9bad1f026b3609963754fb181c666ec1712c45c6584c474c64efea652"
+```
+Returns full settings + items. Use the data to bootstrap a new hub on another project.
+
+### Edit an existing link hub
+```bash
+# Update settings (only send fields you're changing)
+curl -X PUT "https://devtools.prairiegiraffe.com/api/projects/proj_x2c0miif/link-hub/settings" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer dtk_1bb55aa9bad1f026b3609963754fb181c666ec1712c45c6584c474c64efea652" \
+  -d '{ "link_hub_button_color": "#2563eb" }'
+
+# Add a link
+curl -X POST "https://devtools.prairiegiraffe.com/api/projects/proj_x2c0miif/link-hub/items" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer dtk_1bb55aa9bad1f026b3609963754fb181c666ec1712c45c6584c474c64efea652" \
+  -d '{ "label": "Careers", "url": "https://site-wyo-services.pages.dev/careers.html" }'
+
+# Update a link (get item IDs from GET /link-hub/settings first)
+curl -X PUT "https://devtools.prairiegiraffe.com/api/projects/proj_x2c0miif/link-hub/items/ITEM_ID" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer dtk_1bb55aa9bad1f026b3609963754fb181c666ec1712c45c6584c474c64efea652" \
+  -d '{ "label": "New Label", "url": "https://new-url.com" }'
+
+# Delete a link
+curl -X DELETE "https://devtools.prairiegiraffe.com/api/projects/proj_x2c0miif/link-hub/items/ITEM_ID" \
+  -H "Authorization: Bearer dtk_1bb55aa9bad1f026b3609963754fb181c666ec1712c45c6584c474c64efea652"
+```
+
 ## Platform Integration
 
 This site is tracked in the devtools platform as a `captured_sites` row.
