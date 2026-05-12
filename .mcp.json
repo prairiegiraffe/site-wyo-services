@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "devtools": {
+      "type": "url",
+      "url": "https://devtools.prairiegiraffe.com/api/mcp",
+      "headers": {
+        "Authorization": "Bearer dtk_1bb55aa9bad1f026b3609963754fb181c666ec1712c45c6584c474c64efea652",
+        "X-Project-Key": "proj_x2c0miif"
+      }
+    }
+  }
+}
