@@ -885,6 +885,27 @@ section.page-section.dark .eyebrow::before { background: var(--color-primary-lig
   margin-bottom: 16px;
 }
 .site-footer__list { list-style: none; padding: 0; margin: 0; line-height: 2.1; font-size: 0.9375rem; }
+.site-footer__social {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+.site-footer__social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  color: #94a3b8;
+  transition: background var(--transition), color var(--transition);
+}
+.site-footer__social a:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+.site-footer__social svg { width: 18px; height: 18px; }
 .site-footer__bottom {
   border-top: 1px solid rgba(255,255,255,0.08);
   padding-top: 24px;
