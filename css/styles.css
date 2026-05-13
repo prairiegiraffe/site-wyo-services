@@ -176,8 +176,10 @@ hr { border: 0; height: 1px; background: var(--color-border); margin: 3rem 0; }
 .site-header {
   position: sticky; top: 0; z-index: 40;
   background: rgba(0, 0, 0, 0.97);
-  backdrop-filter: saturate(1.2) blur(8px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+@media (min-width: 1081px) {
+  .site-header { backdrop-filter: saturate(1.2) blur(8px); }
 }
 .site-header__inner {
   display: flex; align-items: center; justify-content: space-between;
@@ -934,17 +936,18 @@ section.page-section.dark .eyebrow::before { background: var(--color-primary-lig
 
 /* Mobile / Tablet — nav collapses under logo */
 @media (max-width: 1080px) {
-  .site-header__inner { flex-wrap: wrap; gap: 12px; }
-  .site-header__toggle { display: block; }
+  .site-header { overflow: visible; }
+  .site-header__inner { flex-wrap: wrap; gap: 12px; position: relative; }
+  .site-header__toggle { display: block; position: relative; z-index: 1001; }
   .site-header__cta { order: 2; }
 
   .site-nav {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    z-index: 999;
+    height: 100dvh;
+    z-index: 1000;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
@@ -955,7 +958,6 @@ section.page-section.dark .eyebrow::before { background: var(--color-primary-lig
     -webkit-overflow-scrolling: touch;
   }
   .site-nav.is-open { display: flex; }
-  .site-header__toggle { position: relative; z-index: 1000; }
   .site-nav a {
     padding: 12px 8px;
     font-size: 0.9375rem;
