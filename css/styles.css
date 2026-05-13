@@ -938,7 +938,12 @@ section.page-section.dark .eyebrow::before { background: var(--color-primary-lig
 @media (max-width: 1080px) {
   .site-header { overflow: visible; }
   .site-header__inner { flex-wrap: wrap; gap: 12px; position: relative; }
-  .site-header__toggle { display: block; position: relative; z-index: 1001; }
+  .site-header__toggle { display: block; z-index: 1001; }
+  .site-header__toggle[aria-expanded="true"] {
+    position: fixed;
+    top: 20px;
+    right: 24px;
+  }
   .site-header__cta { order: 2; }
 
   .site-nav {
