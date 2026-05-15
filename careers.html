@@ -121,19 +121,90 @@
     </div>
   </section>
 
-  <!-- How to Apply -->
+  <!-- Application Form -->
   <section class="page-section" data-block-id="careers:apply">
     <div class="container">
       <div class="page-section__header center">
-        <span class="eyebrow" data-content="apply-eyebrow">How to Apply</span>
-        <h2 data-content="apply-title">Get in Touch</h2>
+        <span class="eyebrow" data-content="apply-eyebrow">Apply Now</span>
+        <h2 data-content="apply-title">Submit Your Application</h2>
       </div>
-      <div class="container-narrow" style="margin: 0 auto; text-align: center;">
-        <p data-content="apply-text-1">We keep it simple. If you're interested in working with WYO Services, give us a call or send a message through our contact form. Tell us about your experience, what equipment you can run, and where you're located.</p>
-        <p data-content="apply-text-2">We're particularly interested in people with experience in heavy equipment operation, dirt work, fencing, reclamation, and general oilfield site construction. A CDL is a plus. Willingness to work hard in all conditions is a requirement.</p>
-        <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top: 24px;">
-          <a href="tel:3076708065" class="btn">Call (307) 670-8065</a>
-          <a href="/contact.html" class="btn btn--outline">Use Contact Form</a>
+      <div class="contact-grid">
+        <div>
+          <p style="margin-bottom:24px;" data-content="apply-text">Tell us about your experience and what you can do. We're looking for equipment operators, field crew, welders, fencing hands, and CDL drivers. Upload a resume if you have one -- but your experience matters more than a document.</p>
+          <form class="contact-form" data-devtools-form data-form-type="application">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
+              <div class="form-field">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first_name" required>
+              </div>
+              <div class="form-field">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last_name" required>
+              </div>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-field">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="location">City / Location</label>
+              <input type="text" id="location" name="custom_fields[location]" placeholder="Where are you located?">
+            </div>
+            <div class="form-field">
+              <label for="position">Position Interest</label>
+              <select id="position" name="custom_fields[position]" required>
+                <option value="">Select a position...</option>
+                <option value="equipment-operator">Equipment Operator</option>
+                <option value="field-crew">Field Crew / Laborer</option>
+                <option value="fencing-crew">Fencing Crew</option>
+                <option value="welder-fabricator">Welder / Fabricator</option>
+                <option value="cdl-driver">CDL Driver</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="experience">Experience</label>
+              <textarea id="experience" name="message" required placeholder="Tell us about your experience — equipment you can run, years in the field, certifications, CDL, etc."></textarea>
+            </div>
+            <div class="form-field">
+              <label for="resume">Resume (optional)</label>
+              <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx,.txt">
+            </div>
+            <div class="form-field">
+              <label for="referral">How did you hear about us?</label>
+              <input type="text" id="referral" name="custom_fields[referral]" placeholder="Referral, social media, drove past, etc.">
+            </div>
+            <button type="submit" class="btn">Submit Application</button>
+          </form>
+        </div>
+        <div>
+          <div class="contact-card">
+            <h3>Prefer to Call?</h3>
+            <dl>
+              <div>
+                <dt>Phone</dt>
+                <dd><a href="tel:3076708065">(307) 670-8065</a></dd>
+              </div>
+              <div>
+                <dt>Office</dt>
+                <dd>410 Limestone Ave<br>Gillette, WY</dd>
+              </div>
+              <div>
+                <dt>We're Looking For</dt>
+                <dd>Equipment operators, field crew, welders, fencing hands, CDL drivers</dd>
+              </div>
+              <div>
+                <dt>Locations</dt>
+                <dd>Gillette &amp; Douglas, Wyoming</dd>
+              </div>
+            </dl>
+          </div>
         </div>
       </div>
     </div>
