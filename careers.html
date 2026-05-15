@@ -168,9 +168,28 @@
                 <option value="other">Other</option>
               </select>
             </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
+              <div class="form-field">
+                <label for="drivers-license">Driver's License?</label>
+                <select id="drivers-license" name="custom_fields[drivers_license]">
+                  <option value="">Select...</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="cdl">CDL?</label>
+                <select id="cdl" name="custom_fields[cdl]">
+                  <option value="">Select...</option>
+                  <option value="yes-class-a">Yes — Class A</option>
+                  <option value="yes-class-b">Yes — Class B</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+            </div>
             <div class="form-field">
               <label for="experience">Experience</label>
-              <textarea id="experience" name="message" required placeholder="Tell us about your experience — equipment you can run, years in the field, certifications, CDL, etc."></textarea>
+              <textarea id="experience" name="message" required placeholder="Tell us about your experience — equipment you can run, years in the field, certifications, etc."></textarea>
             </div>
             <div class="form-field">
               <label for="resume">Resume (optional)</label>
@@ -271,7 +290,7 @@
           <h4>Contact</h4>
           <ul class="site-footer__list">
             <li><a href="tel:3076708065">(307) 670-8065</a></li>
-            <li>Email coming soon</li>
+            <li><a href="mailto:office@wyoservicesllc.com">office@wyoservicesllc.com</a></li>
             <li><a href="/contact.html">Get a Quote</a></li>
             <li><a href="/service-areas.html">Service Areas</a></li>
           </ul>
