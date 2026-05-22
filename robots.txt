@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://site-wyo-services.pages.dev/sitemap.xml
