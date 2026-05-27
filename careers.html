@@ -162,76 +162,12 @@
       <div class="contact-grid">
         <div>
           <p style="margin-bottom:24px;" data-content="apply-text">Tell us about your experience and what you can do. We're looking for equipment operators, field crew, welders, fencing hands, and CDL drivers. Upload a resume if you have one -- but your experience matters more than a document.</p>
-          <form class="contact-form" data-devtools-form data-form-type="application">
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
-              <div class="form-field">
-                <label for="first-name">First Name</label>
-                <input type="text" id="first-name" name="first_name" required>
-              </div>
-              <div class="form-field">
-                <label for="last-name">Last Name</label>
-                <input type="text" id="last-name" name="last_name" required>
-              </div>
-            </div>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
-              <div class="form-field">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-              </div>
-              <div class="form-field">
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone" required>
-              </div>
-            </div>
-            <div class="form-field">
-              <label for="location">City / Location</label>
-              <input type="text" id="location" name="custom_fields[location]" placeholder="Where are you located?">
-            </div>
-            <div class="form-field">
-              <label for="position">Position Interest</label>
-              <select id="position" name="custom_fields[position]" required>
-                <option value="">Select a position...</option>
-                <option value="equipment-operator">Equipment Operator</option>
-                <option value="field-crew">Field Crew / Laborer</option>
-                <option value="fencing-crew">Fencing Crew</option>
-                <option value="welder-fabricator">Welder / Fabricator</option>
-                <option value="cdl-driver">CDL Driver</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
-              <div class="form-field">
-                <label for="drivers-license">Driver's License?</label>
-                <select id="drivers-license" name="custom_fields[drivers_license]">
-                  <option value="">Select...</option>
-                  <option value="yes">Yes</option>
-                  <option value="no">No</option>
-                </select>
-              </div>
-              <div class="form-field">
-                <label for="cdl">CDL?</label>
-                <select id="cdl" name="custom_fields[cdl]">
-                  <option value="">Select...</option>
-                  <option value="yes-class-a">Yes — Class A</option>
-                  <option value="yes-class-b">Yes — Class B</option>
-                  <option value="no">No</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-field">
-              <label for="experience">Experience</label>
-              <textarea id="experience" name="message" required placeholder="Tell us about your experience — equipment you can run, years in the field, certifications, etc."></textarea>
-            </div>
-            <div class="form-field">
-              <label for="resume">Resume (optional)</label>
-              <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx,.txt">
-            </div>
-            <div class="form-field">
-              <label for="referral">How did you hear about us?</label>
-              <input type="text" id="referral" name="custom_fields[referral]" placeholder="Referral, social media, drove past, etc.">
-            </div>
-            <button type="submit" class="btn">Submit Application</button>
-          </form>
+          <div class="contact-form" id="job-application-form"></div>
+          <script src="https://devtools.prairiegiraffe.com/form-embed.js"
+            data-project="proj_x2c0miif"
+            data-form="job-application"
+            data-target="job-application-form"
+            defer></script>
         </div>
         <div>
           <div class="contact-card">

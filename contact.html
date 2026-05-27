@@ -104,51 +104,12 @@
         <div>
           <h2 style="margin-bottom:8px;" data-content="form-title">Request a Quote</h2>
           <p style="margin-bottom:32px;" data-content="form-subtitle">Fill out the form below and our team will follow up to discuss your project scope, timeline, and requirements.</p>
-          <form class="contact-form" data-devtools-form data-form-type="contact">
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
-              <div class="form-field">
-                <label for="first-name">First Name</label>
-                <input type="text" id="first-name" name="first_name" required>
-              </div>
-              <div class="form-field">
-                <label for="last-name">Last Name</label>
-                <input type="text" id="last-name" name="last_name" required>
-              </div>
-            </div>
-            <div class="form-field">
-              <label for="company">Company</label>
-              <input type="text" id="company" name="company">
-            </div>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
-              <div class="form-field">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-              </div>
-              <div class="form-field">
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone">
-              </div>
-            </div>
-            <div class="form-field">
-              <label for="service">Service Needed</label>
-              <select id="service" name="service">
-                <option value="">Select a service...</option>
-                <option value="pad-construction">Pad Construction &amp; Dirt Work</option>
-                <option value="reclamation">Reclamation &amp; Seeding</option>
-                <option value="fencing">Fencing &amp; Containment</option>
-                <option value="cattle-guards">Cattle Guards</option>
-                <option value="infrastructure">Site Infrastructure Support</option>
-                <option value="turnkey">Turnkey Site Development</option>
-                <option value="pipeline">Pipeline Work</option>
-                <option value="multiple">Multiple Services</option>
-              </select>
-            </div>
-            <div class="form-field">
-              <label for="message">Project Details</label>
-              <textarea id="message" name="message" placeholder="Tell us about your project - location, scope, timeline, and any other details that will help us put together a proposal."></textarea>
-            </div>
-            <button type="submit" class="btn">Submit Request →</button>
-          </form>
+          <div class="contact-form" id="contact-form"></div>
+          <script src="https://devtools.prairiegiraffe.com/form-embed.js"
+            data-project="proj_x2c0miif"
+            data-form="contact-form"
+            data-target="contact-form"
+            defer></script>
         </div>
         <div>
           <div class="contact-card">
