@@ -493,6 +493,7 @@ section.page-section.dark .eyebrow::before { background: var(--color-primary-lig
   gap: 64px;
   align-items: center;
 }
+.about-grid--founders { grid-template-columns: 1fr 1.2fr; }
 .about-grid__body { max-width: 640px; }
 .about-grid__body p { font-size: 1.125rem; line-height: 1.7; }
 .about-grid__image {
